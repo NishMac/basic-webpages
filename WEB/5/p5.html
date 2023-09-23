@@ -1,22 +1,23 @@
-Program a)
+<!-- Create a JavaScript that asks the user for a name, then greets the user with Hello and the user
+name on the page -->
 <!DOCTYPE html>
 <html>
 <head>
-<title>USN Form</title>
-<script type="text/javascript"> function validateUSN() {
-var usnInput = document.getElementById("usn").value; var usnPattern = /^[1-4][A-Z]{2}\d{2}[A-Z]{2}\d{3}$/; if (usnPattern.test(usnInput)) {
-alert("USN is valid: " + usnInput);
-} else {
-alert("Invalid USN format. Please enter a valid USN.");
-}
-}
-</script>
+    <title>Greeting Page</title>
 </head>
 <body>
-<form>
-<label for="usn">Enter your USN:</label>
-<input type="text" id="usn" name="usn" required>
-<input type="button" value="Submit" onclick="validateUSN()">
-</form>
+    <h1>Greeting Page</h1>
+    <script>
+        var userName = prompt("Please enter your name:");
+
+        if (userName !== null && userName !== "") {
+            var greeting = "Hello, " + userName + "!";
+            var greetingParagraph = document.createElement("p");
+            greetingParagraph.textContent = greeting;
+            document.body.appendChild(greetingParagraph);
+        } else {
+            alert("Hello, guest!");
+        }
+    </script>
 </body>
 </html>
